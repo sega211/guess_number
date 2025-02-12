@@ -9,29 +9,36 @@ console.log(secretNumber);
 console.log(range.max);
 const comp1Name = "Компьютер 1"; 
 const comp2Name = "Компьютер 2"; 
+let win = false;
 
 function guess () {
-    guessNumber = Math.trunc((range.max - range.min + 1) /2);
+    guessNumber = Math.trunc((range.max - range.min + 1) /2) + range.min - 1;
     console.log(`${comp2Name} : Пробую число ${guessNumber}`);
     return guessNumber;
 }
-guess();
+//guess();
 
 function answer(guessNumber) {
-    let win = 0;
+    
     if (guessNumber < secretNumber) {
         range.min = guessNumber + 1;
         console.log(`${comp1Name}: "Больше"`);
-        return range.min;
+        return false;
     } else if (guessNumber > secretNumber) {
         range.max = guessNumber - 1;
         console.log(`${comp1Name}: "Меньше"`);
-        return range.max;
+        return false;
     } else {
-        win = 1;
+        win = true;
         console.log(`${comp1Name}: "Угадал"`);
-        return win;
+        return true;
     }
+}
+
+while (!win) {
+    guess();
+    win = answer(guessNumber);
+    console.log(`Текущий диапазон: ${range.min} - ${range.max}`);
 }
 
 
