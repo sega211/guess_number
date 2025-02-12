@@ -5,18 +5,24 @@ let range = {
   };
 const secretNumber = Math.trunc(Math.random() * rangeLength) + 1;
 let guessNumber;
-console.log(secretNumber);
-console.log(range.max);
+
+
 const comp1Name = "Компьютер 1"; 
 const comp2Name = "Компьютер 2"; 
+console.log(`${comp1Name}: загадал число ${secretNumber}`);
 let win = false;
 
-function guess () {
-    guessNumber = Math.trunc((range.max - range.min + 1) /2) + range.min - 1;
-    console.log(`${comp2Name} : Пробую число ${guessNumber}`);
+function guess (currentRange) {
+    if (currentRange.min === currentRange.max) {
+        guessNumber = currentRange.min
+    } else {
+        guessNumber = Math.trunc((range.max - range.min + 1) /2) + range.min - 1;
+    }
+    
+    console.log(`${comp2Name}: Пробую число ${guessNumber}`);
     return guessNumber;
 }
-//guess();
+
 
 function answer(guessNumber) {
     
@@ -36,15 +42,10 @@ function answer(guessNumber) {
 }
 
 while (!win) {
-    guess();
+    guess(range);
     win = answer(guessNumber);
-    console.log(`Текущий диапазон: ${range.min} - ${range.max}`);
+    //console.log(`Текущий диапазон: ${range.min} - ${range.max}`);
 }
 
 
 
-// answer(guessNumber);
-// console.log(range);
-// guess();
-// answer(guessNumber);
-// console.log(range);
