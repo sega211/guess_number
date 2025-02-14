@@ -35,9 +35,9 @@ function mySlice(arr, start, end) {
 
 const arr1 = [1, 3, 5, 3, "let"];
 
-console.log(arr1);
-console.log(mySlice(arr1, 3, 5 ));// 3, 'let'
-console.log(mySlice(arr1, 1, 4 ));// 3, 5, 3
+// console.log(arr1);
+// console.log(mySlice(arr1, 3, 5 ));// 3, 'let'
+// console.log(mySlice(arr1, 1, 4 ));// 3, 5, 3
 
 function myIndexOf(arr, item, from) {
     
@@ -64,10 +64,10 @@ function myIndexOf(arr, item, from) {
 
 
 const arr2 = ['a', 'b', 'c', 'd', 'e'];
-console.log(arr2);
-console.log(myIndexOf(arr2, 'c')); // 2
-console.log(myIndexOf(arr2, 'f')); // -1
-console.log(myIndexOf(arr2, 'b', 1)); // 1
+// console.log(arr2);
+// console.log(myIndexOf(arr2, 'c')); // 2
+// console.log(myIndexOf(arr2, 'f')); // -1
+// console.log(myIndexOf(arr2, 'b', 1)); // 1
 
 
 
@@ -96,7 +96,7 @@ function myIncludes(arr, item, from) {
 
 
 const arr3 = [1, 2, 3, 4, 5];
-console.log(arr3);
-console.log(myIncludes(arr3, 3)); // true
-console.log(myIncludes(arr3, 6)); // false
-console.log(myIncludes(arr3, 2, 1)); // true
+// console.log(arr3);
+// console.log(myIncludes(arr3, 3)); // true
+// console.log(myIncludes(arr3, 6)); // false
+// console.log(myIncludes(arr3, 2, 1)); // true
