@@ -37,7 +37,7 @@ const arr1 = [1, 3, 5, 3, "let"];
 
 console.log(arr1);
 console.log(mySlice(arr1, 3, 5 ));// 3, 'let'
-console.log(mySlice(arr1, 1, 4 ));// 3, 'let'
+console.log(mySlice(arr1, 1, 4 ));// 3, 5, 3
 
 function myIndexOf(arr, item, from) {
     
@@ -68,3 +68,35 @@ console.log(arr2);
 console.log(myIndexOf(arr2, 'c')); // 2
 console.log(myIndexOf(arr2, 'f')); // -1
 console.log(myIndexOf(arr2, 'b', 1)); // 1
+
+
+
+function myIncludes(arr, item, from) {
+    
+    if (!Array.isArray(arr)) {
+        console.error("first argument must be an array");
+    }
+
+    
+    if (from === undefined) {
+        from = 0;
+    } else if (from < 0) {
+    
+        from = arr.length + from;
+        if (from < 0) from = 0;
+    }
+
+    for (let i = from; i < arr.length; i++) {
+        if (arr[i] === item) {
+            return true;
+        }
+    }
+    return false;
+}
+
+
+const arr3 = [1, 2, 3, 4, 5];
+console.log(arr3);
+console.log(myIncludes(arr3, 3)); // true
+console.log(myIncludes(arr3, 6)); // false
+console.log(myIncludes(arr3, 2, 1)); // true
