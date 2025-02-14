@@ -35,7 +35,36 @@ function mySlice(arr, start, end) {
 
 const arr1 = [1, 3, 5, 3, "let"];
 
-const newArr = mySlice(arr1, 3, 5 );
-
 console.log(arr1);
-console.log(newArr);
+console.log(mySlice(arr1, 3, 5 ));// 3, 'let'
+console.log(mySlice(arr1, 1, 4 ));// 3, 'let'
+
+function myIndexOf(arr, item, from) {
+    
+    if (!Array.isArray(arr)) {
+        console.error("first argument must be an array");
+    }
+
+    
+    if (from === undefined) {
+        from = 0;
+    } else if (from < 0) {
+        
+        from = arr.length + from;
+        if (from < 0) from = 0;
+    }
+
+    for (let i = from; i < arr.length; i++) {
+        if (arr[i] === item) {
+            return i;
+        }
+    }
+    return -1;
+}
+
+
+const arr2 = ['a', 'b', 'c', 'd', 'e'];
+console.log(arr2);
+console.log(myIndexOf(arr2, 'c')); // 2
+console.log(myIndexOf(arr2, 'f')); // -1
+console.log(myIndexOf(arr2, 'b', 1)); // 1
