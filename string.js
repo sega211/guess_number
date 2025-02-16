@@ -34,3 +34,13 @@ const maxChars = 40;
 // , maxChars));
 
 
+const isSubstring = function(str1, str2) {
+    if(str2.includes(str1)) return true;
+    if(str1.includes(str2)) return true;
+    return false;
+}
+
+// console.log(isSubstring("hello", "hello world")); // true
+// console.log(isSubstring("world", "hello world")); // true
+// console.log(isSubstring("hey", "hello world")); // false
+// console.log(isSubstring("world", "hello")); // false
